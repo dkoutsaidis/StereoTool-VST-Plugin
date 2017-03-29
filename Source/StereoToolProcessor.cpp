@@ -11,7 +11,6 @@ Author: Dimitris Koutsaidis
 
 to do:
 - learn how to initialize all kind of things (e.g. in/out channel layout)..
-- clarify last sample problem in the 'for' loop of the "processBlock" method..
 
 */
 
