@@ -154,12 +154,12 @@ void StereoToolAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuf
         float rightChannelDataIn = buffer.getReadPointer(1)[i];
         float monoDataIn = (leftChannelDataIn + rightChannelDataIn) / 2;
         
-        if (buttonState == 0)
+        if (buttonState == 1)
         {
             leftChannelDataOut[i] = (1 - monoMix*0.01)*rightChannelDataIn + (monoMix*0.01)*monoDataIn;
             rightChannelDataOut[i] = (1 - monoMix*0.01)*leftChannelDataIn + (monoMix*0.01)*monoDataIn;
         }
-        else
+        else if (buttonState == 0)
         {
             leftChannelDataOut[i] = (1 - monoMix*0.01)*leftChannelDataIn + (monoMix*0.01)*monoDataIn;
             rightChannelDataOut[i] = (1 - monoMix*0.01)*rightChannelDataIn + (monoMix*0.01)*monoDataIn;

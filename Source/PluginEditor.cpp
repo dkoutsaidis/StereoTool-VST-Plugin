@@ -23,7 +23,7 @@ StereoToolAudioProcessorEditor::StereoToolAudioProcessorEditor (StereoToolAudioP
     // stereo image flip buttons
     addAndMakeVisible(stereoFlip);
     stereoFlip.setBounds(158, 130, 30, 30);
-    //stereoFlip.addListener(this);
+    stereoFlip.addListener(this);
 }
 
 
@@ -107,7 +107,7 @@ void StereoToolAudioProcessorEditor::sliderValueChanged(Slider *slider)
 
 
 // ========== Define updateToggleState Method ==========
-void StereoToolAudioProcessorEditor::buttonToggled (Button* button)
+void StereoToolAudioProcessorEditor::buttonClicked(Button *button)
 {
     if (button == &stereoFlip)
     {

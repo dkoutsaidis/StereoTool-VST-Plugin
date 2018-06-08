@@ -11,8 +11,8 @@
 
 // ========== Declare the Plug-In's editor class ==========
 class StereoToolAudioProcessorEditor  : public AudioProcessorEditor,
-                                        public Slider::Listener//,
-                                        //public Button::Listener
+                                        public Slider::Listener,
+                                        public Button::Listener
 {
 public:
     // declare constractor and deconstractor
@@ -25,14 +25,16 @@ public:
     
     // declare custom methods
     void sliderValueChanged(Slider *) override;
-    void buttonToggled (Button* button);
+    void buttonClicked (Button*) override;
 
 private:
-    // audio processor's listener pointer
+    // audio processor's pointer
     StereoToolAudioProcessor &processor;
 
     // slider
     Slider mixSlider;
+    
+    // button
     ToggleButton stereoFlip;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StereoToolAudioProcessorEditor)
